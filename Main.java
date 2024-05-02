@@ -38,8 +38,8 @@ public class Main {
         System.out.println(matrixGraph.edgeExists(0, 1));
         System.out.println(matrixGraph.edgeExists(0, 9));
         
-        
-        System.out.println();
+
+        System.out.println("***");
 
 
         ListGraph listGraph = new ListGraph<>(10, false);
@@ -56,5 +56,43 @@ public class Main {
         listGraph.addEdge(8, 9);
 
         listGraph.print();
+        System.out.println("***");
+
+        MatrixGraph<Integer> directedMatrix = new MatrixGraph<Integer>(8, true);
+        
+        directedMatrix.addNode(0);
+        directedMatrix.addNode(1);
+        directedMatrix.addNode(2);
+        directedMatrix.addNode(3);
+        directedMatrix.addNode(4);
+        directedMatrix.addNode(5);
+        directedMatrix.addNode(6);
+        directedMatrix.addNode(7);
+
+        directedMatrix.addEdge(0, 1);
+        directedMatrix.addEdge(0, 2);
+        directedMatrix.addEdge(1, 2);
+        directedMatrix.addEdge(1, 3);
+        directedMatrix.addEdge(2, 3);
+        directedMatrix.addEdge(2, 5);
+        directedMatrix.addEdge(3, 4);
+        directedMatrix.addEdge(7, 6);
+        
+        directedMatrix.printMatrix();
+        System.out.println("***");
+    
+        ListGraph directedList = new ListGraph(8, true);
+
+        directedList.addEdge(0, 1);
+        directedList.addEdge(0, 2);
+        directedList.addEdge(1, 2);
+        directedList.addEdge(1, 3);
+        directedList.addEdge(2, 3);
+        directedList.addEdge(2, 5);
+        directedList.addEdge(3, 4);
+        directedList.addEdge(7, 6);
+        
+        directedMatrix.printMatrix();
+        System.out.println("***");
     }
 }
